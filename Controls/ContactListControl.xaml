@@ -1,0 +1,87 @@
+﻿<UserControl x:Class="WpfApp1.ContactListControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+
+        <ListBox Grid.Row="0" ItemsSource="{Binding Path=Contacts}" Margin="5" HorizontalContentAlignment="Stretch">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border CornerRadius="3" Margin="2" BorderBrush="Blue" Background="AliceBlue" >
+                        <Grid Margin="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Orientation="Vertical" Grid.Column="0">
+                                <TextBlock Text="{Binding Path=Name}"/>
+                                <TextBlock Text="{Binding Path=Gender}"/>
+                                <TextBlock Text="{Binding Path=BirthDay}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical" Grid.Column="2">
+                                <Button x:Name="btnEditContact"  Background="Transparent" BorderThickness="0">
+                                    <Image Width="24" Height="24" Source="/WpfApp1;component/images/edit-32.png" />
+                                </Button>
+                                <Button x:Name="btnDeleteContact"  Background="Transparent" BorderThickness="0">
+                                    <Image Width="24" Height="24" Source="/WpfApp1;component/images/delete-32.png"  />
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+
+
+        <StackPanel Grid.Row="1" Orientation="Vertical">
+            <Button Click="AddContact" Margin="3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Width="24" Height="24" Source="/WpfApp1;component/images/add-32-blue.png" Margin="3" Grid.Column="0" VerticalAlignment="Center"/>
+                    <TextBlock 
+                        Text="Добавить новый контакт       " 
+                        TextWrapping="Wrap"
+                        VerticalAlignment="Center"
+                        Grid.Column="1"
+                        FontSize="14"/>
+                </Grid>
+            </Button>
+
+            <Button Click="SaveContactsClick"  Margin="3" Background="Transparent">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image 
+                        Width="24" Height="24" 
+                        Source="/WpfApp1;component/images/save-32.png" 
+                        Margin="3" 
+                        Grid.Column="0" VerticalAlignment="Center"/>
+                    <TextBlock 
+                        Text="Сохранить список контактов" TextWrapping="Wrap"
+                        VerticalAlignment="Center"
+                        Grid.Column="1"
+                        FontSize="14"/>
+                </Grid>
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>
