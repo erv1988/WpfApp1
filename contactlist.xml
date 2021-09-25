@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfContact xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Contact>
+    <Name>Студент МарГУ №1</Name>
+    <Gender>Male</Gender>
+    <BirthDay>18.09.2000</BirthDay>
+  </Contact>
+  <Contact>
+    <Name>Студентка МарГУ №2</Name>
+    <Gender>Female</Gender>
+    <BirthDay>25.09.2000</BirthDay>
+  </Contact>
+</ArrayOfContact>

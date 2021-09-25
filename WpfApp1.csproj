@@ -125,5 +125,10 @@
     <Resource Include="images\delete-32.png" />
     <Resource Include="images\edit-32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="contactlist.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
