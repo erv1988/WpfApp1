@@ -19,10 +19,11 @@ namespace WpfApp1
     /// </summary>
     public partial class NewContactWindow : Window
     {
-        public Contact Contact { set; get; } = new Contact();
+        public Contact Contact { set; get; } 
         public NewContactWindow()
         {
             InitializeComponent();
+            Contact = new Contact();
             this.DataContext = Contact;
         }
 
